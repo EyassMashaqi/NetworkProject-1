@@ -2,7 +2,7 @@ from socket import *
 
 Websock = socket(AF_INET, SOCK_STREAM)
 # Declare host name and its port
-HOST_NAME = '192.168.1.2'
+HOST_NAME = "192.168.1.108"
 HOST_PORT = 9977
 
 Websock.bind((HOST_NAME, HOST_PORT))
@@ -93,9 +93,9 @@ while True:
             conn.send(f1.read())
             f1.close()
 
-        elif path == "/yt":
+        elif path == "/cr":
             conn.send("HTTP/1.1 307 Temporary Redirect\r\n".encode())
-            conn.send("Location: https://youtube.com/\r\n".encode())
+            conn.send("Location: https://cornell.edu/\r\n".encode())
             conn.send("\r\n".encode())
         elif path == "/so":
             conn.send("HTTP/1.1 307 Temporary Redirect\r\n".encode())
